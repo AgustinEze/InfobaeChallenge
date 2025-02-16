@@ -6,17 +6,14 @@ import { useAuth } from "../components/context/AuthContext";
 import { Button } from "../components/atoms/Button";
 import { NavBar } from "../components/molecules/NavBar";
 import { BlogCardSkeleton } from "../components/molecules/BlogCardSkeleton";
-
+import { Filters } from "../components/molecules/Filters";
 
 export const HomePage = () => {
-
   const navigate = useNavigate();
   const { isAuthenticated, user, logout } = useAuth();
   const { data, loading, error } = useFetch(URL_ROUTES.getAllPost);
 
-  if(error)return (
-    <p className="text-red-500">Error: {error}</p>
-  )
+  if (error) return <p className="text-red-500">Error: {error}</p>;
 
   return (
     <div className="flex flex-col min-h-screen w-screen">
@@ -37,7 +34,7 @@ export const HomePage = () => {
         )}
       </NavBar>
 
-      {/* Contenido */}
+      <Filters />
       <div className="p-4 flex-grow w-full">
         {loading && (
           <div className="p-4 flex-grow w-full grid gap-4 grid-cols-1 md:grid-cols-4 lg:grid-cols-6">

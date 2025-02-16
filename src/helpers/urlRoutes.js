@@ -5,5 +5,6 @@ export const URL_ROUTES ={
     getCommentByPost: (id)=>`${BASE_URL}/post/${id}/comment`,
     getPostByTag: (id)=>`${BASE_URL}/tag/${id}/post`,
     getUsers: `${BASE_URL}/user`,
+    getTagList : `${BASE_URL}/tag`,
 
 }
