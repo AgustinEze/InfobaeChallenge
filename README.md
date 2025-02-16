@@ -10,8 +10,7 @@ Se utilizó la documentación de [DummyAPI](https://dummyapi.io/docs) para obten
 - Se utilizaron **custom hooks** para realizar los fetchs de datos.
 - Debido a que el **sign in** de DummyAPI no funciona, se utilizó la `app-id` que aparece en los headers cuando inspeccionamos la página en **Network**, en el API Explorer.
 - **Visualización de comentarios:** Si se hace clic en un post, se muestran los comentarios asociados.
-- **Búsqueda por tags:** Al escribir un **tag** en la barra de búsqueda, los posts se filtran por dicho tag.
-- **Navegación entre posts:** Al hacer clic en un tag dentro de un post, se redirige a una vista con todos los posts que contienen dicho tag.
+- **Búsqueda por tags:** Al escribir un **tag** en la barra de búsqueda, los posts se filtran por dicho tag. Al hacer clic en un tag del dropdown nos redirige a una pagina donde muestra los post con ese tag asociado
 
 ## URL para Testear
 Se puede probar la aplicación en el siguiente enlace:
