@@ -22,12 +22,11 @@ export const Filters = () => {
     }
   }, [searchTerm, data]);
 
-  // ✅ Manejar selección de un tag y redirigir a `/post/{tag}`
   const handleSelectTag = (tag) => {
-    const trimmedTag = tag.trim(); // ✅ Eliminar espacios al inicio y final
+    const trimmedTag = tag.trim(); 
     setSearchTerm(trimmedTag);
     setShowDropdown(false);
-    navigate(`/post/${encodeURIComponent(trimmedTag)}`); // ✅ Codificar correctamente
+    navigate(`/post/${encodeURIComponent(trimmedTag)}`); 
   };
   
 
@@ -35,7 +34,7 @@ export const Filters = () => {
 
   return (
     <div className="relative p-4 w-full max-w-md">
-      {/* Search Bar */}
+  
       <input
         type="text"
         placeholder="Buscar tags..."
@@ -44,7 +43,7 @@ export const Filters = () => {
         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
-      {/* Dropdown con Tags Filtrados */}
+
       {showDropdown && (
         <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
           {filteredTags.map((tag, index) => (
