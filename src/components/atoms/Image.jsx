@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { isValidUrl } from "../../helpers/regex";
 
 export const Image = ({ src, alt, className }) => {
   const [loaded, setLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  
+
+  // Determinar la imagen a usar
+  const finalSrc = isValidUrl(src) && !hasError ? src : "/not-available.jpg";
+
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {/* Skeleton mientras carga */}
@@ -12,7 +16,7 @@ export const Image = ({ src, alt, className }) => {
       )}
 
       <img
-        src={src && !hasError ? src : undefined}
+        src={finalSrc}
         alt={alt || "Imagen no disponible"}
         className={`w-full h-full object-cover transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"
@@ -21,7 +25,7 @@ export const Image = ({ src, alt, className }) => {
         onLoad={() => setLoaded(true)}
         onError={() => {
           setHasError(true);
-          setLoaded(true); 
+          setLoaded(true);
         }}
       />
     </div>
